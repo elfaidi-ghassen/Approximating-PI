@@ -1,4 +1,4 @@
-let r = 200; // the radius of the circle
+let r; // the radius of the circle
 let total = 0; // the total number of points
 let inCircle = 0; // the number of points in the circle
 let pi;
@@ -17,7 +17,13 @@ function truth(ch){
 }
 
 function setup() {
-  createCanvas(402, 402);
+  if (screen.width > 400) {
+      createCanvas(400, 400)
+    }
+  else {
+    createCanvas(screen.width, screen.width);
+  }
+  r = width/2
   background(255);
   translate(width / 2, height / 2);
   stroke(0);
@@ -28,6 +34,7 @@ function setup() {
   rect(0, 0, r * 2, r * 2);
   strokeWeight(1);
 }
+
 
 function draw() {
   translate(width / 2, height / 2);
@@ -49,7 +56,7 @@ function draw() {
   }
   
   pi = 4 * (inCircle / total);
-  document.getElementById("pi").innerHTML = "<b>" + pi.toFixed(5);
+  document.getElementById("pi").innerHTML = "<b>" + pi.toFixed(5); 
 
   if (total > end - 100) {
     noLoop();

@@ -59,3 +59,18 @@ a {
   /* text-decoration: none; */
   color: #333;
 }
+.link {
+  margin-bottom: 30px;
+  
+}
+.heading {
+  text-align: center;
+}
+@media (max-width:520px) {
+.heading h1 {
+  font-size: 20px;
+} 
+.explain, p {
+  font-size: 19px;
+}
+}
